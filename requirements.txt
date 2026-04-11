@@ -19,9 +19,6 @@ notebook
 jupyter
 ipykernel
 
-# Backend
-express
-cors
-
 # Utilities
 tqdm
+requests
