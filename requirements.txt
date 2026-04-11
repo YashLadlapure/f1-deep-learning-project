@@ -1,0 +1,27 @@
+# Deep Learning
+torch
+torchvision
+torchaudio
+
+# Data
+pandas
+numpy
+scikit-learn
+joblib
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Notebook
+notebook
+jupyter
+ipykernel
+
+# Backend
+express
+cors
+
+# Utilities
+tqdm
