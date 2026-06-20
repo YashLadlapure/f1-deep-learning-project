@@ -1,130 +1,64 @@
-# F1 Lap Time Predictor — Deep Learning Project
+# 🏎️ F1 Deep Learning Project
 
-> Predicting Formula 1 lap times using Deep Learning (LSTM + GNN) built on top of a classical ML baseline.
+> Predicting Formula 1 race outcomes using deep learning (CNN/LSTM) on historical race and telemetry data.
 
----
-
-## Project Overview
-
-This project predicts **lap times in milliseconds** for Formula 1 races using a combination of:
-- **LSTM** (Long Short-Term Memory) — captures temporal patterns in driver lap sequences
-- **GNN** (Graph Neural Network) — models relationships between drivers on track
-- **LSTM + GNN Combined** — Spatio-Temporal model for best accuracy
-
-Compared against ML baseline models: Random Forest, KNN, Linear Regression.
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://tensorflow.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 
 ---
 
-## Tech Stack
+## 💡 Project Overview
 
-| Layer | Technology |
+This project applies deep learning techniques to historical F1 race data to predict race outcomes, analyze driver/team performance trends, and explore feature engineering on motorsport datasets.
+
+---
+
+## ✨ Features
+
+- 📊 Exploratory Data Analysis (EDA) on F1 race history
+- 🤖 Deep learning model (CNN / LSTM) for outcome prediction
+- 🔧 Feature engineering: lap times, pit stops, grid positions, weather
+- 📈 Visualization of training metrics and predictions
+
+---
+
+## 🛠 Tech Stack
+
+| Tool | Purpose |
 |---|---|
-| Deep Learning | PyTorch (LSTM, GNN) |
-| ML Baseline | Scikit-learn (Random Forest, KNN, Linear Regression) |
-| Backend | Node.js + Express |
-| Frontend | Next.js + TypeScript + Tailwind CSS |
-| Data | F1 Ergast Dataset (2010–2024) |
+| Python | Core language |
+| TensorFlow / Keras | Model building |
+| Pandas, NumPy | Data processing |
+| Matplotlib, Seaborn | Visualization |
+| Jupyter Notebook | Experimentation |
 
 ---
 
-## Models
+## 🚀 Run Locally
 
-| Model | Type | Description |
-|---|---|---|
-| Linear Regression | ML Baseline | Simple linear relationship |
-| KNN | ML Baseline | K-Nearest Neighbors (k=40) |
-| Random Forest | ML Baseline | 100 decision trees |
-| LSTM | Deep Learning | Lap time sequence per driver |
-| GNN | Deep Learning | Driver interaction graph per lap |
-| LSTM + GNN | Deep Learning | Combined Spatio-Temporal model |
-
----
-
-## Project Structure
-
-```
-f1-deep-learning-project/
-  backend/                  Express server (Node.js)
-  frontend/                 Next.js UI
-  dataset/                  Raw F1 CSV files (13 tables)
-  models/
-    lstm_model.py           LSTM architecture (PyTorch)
-    gnn_model.py            GNN architecture (PyTorch)
-    lstm_gnn_model.py       Combined LSTM+GNN model
-  notebooks/                Training and comparison notebooks
-  ml_mini_proj.ipynb        ML baseline notebook
-  ml_mini_proj.py           ML baseline script
-  predict.py                ML inference script
-  dl_predict.py             DL inference script
-  f1.csv                    Merged dataset
-  requirements.txt          All dependencies
-```
-
----
-
-## Features Used
-
-| Feature | Description |
-|---|---|
-| lap | Current lap number |
-| position | Current race position |
-| pit_stop | Whether driver pitted (0/1) |
-| tyre_age | Laps since last pit stop |
-| grid | Starting grid position |
-| alt | Circuit altitude |
-| driver_skill | Avg lap time of driver (engineered) |
-| circuit_difficulty | Avg lap time at circuit (engineered) |
-| race_year | Season year |
-| round | Race round in season |
-| prev_lap_time | Previous lap time in ms |
-
----
-
-## How to Run
-
-### 1. Install dependencies
 ```bash
-pip install torch torchvision pandas numpy scikit-learn matplotlib seaborn joblib notebook
-```
+git clone https://github.com/YashLadlapure/f1-deep-learning-project.git
+cd f1-deep-learning-project
 
-### 2. Train ML baseline
-```bash
-jupyter notebook ml_mini_proj.ipynb
-```
+# Install dependencies
+pip install -r requirements.txt
 
-### 3. Train LSTM model
-```bash
-jupyter notebook notebooks/01_lstm_training.ipynb
+# Open Jupyter
+jupyter notebook
 ```
-
-### 4. Run backend
-```bash
-cd backend
-npm install
-node server.js
-```
-
-### 5. Run frontend
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Open http://localhost:3000
 
 ---
 
-## Dataset
+## 📁 Notebooks
 
-Source: F1 Ergast API (open source)
-- **13 CSV files**: circuits, drivers, races, lap_times, pit_stops, results, constructors, etc.
-- **Training data**: 2010 – 2019
-- **Test data**: 2020 – present
-- **Total rows**: 500,000+ lap records
+- `EDA.ipynb` — Exploratory data analysis
+- `model_training.ipynb` — Model definition and training
+- `predictions.ipynb` — Results and evaluation
 
 ---
 
-## Team
+## 👤 Author
 
-MIT-WPU Deep Learning Project
+**Yash Ladlapure** — [GitHub](https://github.com/YashLadlapure) · [LinkedIn](https://www.linkedin.com/in/yash-ladlapure) · [Portfolio](https://yashladlapure.github.io/portfolio-website/)
