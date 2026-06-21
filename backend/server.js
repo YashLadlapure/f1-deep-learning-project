@@ -9,6 +9,11 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+// Health check — fixes "Cannot GET /" when opening localhost:5000 in browser
+app.get('/', (req, res) => {
+  res.send('F1 prediction backend is running on port 5000');
+});
+
 app.post('/predict', (req, res) => {
     const inputData = JSON.stringify(req.body);
 
@@ -21,11 +26,9 @@ app.post('/predict', (req, res) => {
     let dataString = '';
     let errorString = '';
 
-
     pythonProcess.stdout.on('data', (data) => {
         dataString += data.toString();
     });
-
 
     pythonProcess.stderr.on('data', (data) => {
         errorString += data.toString();
